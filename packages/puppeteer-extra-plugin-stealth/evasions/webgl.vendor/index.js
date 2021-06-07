@@ -11,7 +11,7 @@ const withUtils = require('../_utils/withUtils')
  *
  * @param {Object} [opts] - Options
  * @param {string} [opts.vendor] - The vendor string to use (default: `Intel Inc.`)
- * @param {string} [opts.renderer] - The renderer string (default: `Intel Iris OpenGL Engine`)
+ * @param {string} [opts.renderer] - The renderer string (default: `Intel(R) Iris(TM) Plus Graphics OpenGL Engine`)
  */
 class Plugin extends PuppeteerExtraPlugin {
   constructor(opts = {}) {
@@ -35,7 +35,7 @@ class Plugin extends PuppeteerExtraPlugin {
           }
           // UNMASKED_RENDERER_WEBGL
           if (param === 37446) {
-            return opts.renderer || 'Intel Iris OpenGL Engine' // default in headless: Google SwiftShader
+            return opts.renderer || 'Intel(R) Iris(TM) Plus Graphics OpenGL Engine' // default in headless: Google SwiftShader
           }
           return result
         }
